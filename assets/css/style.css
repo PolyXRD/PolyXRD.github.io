@@ -116,7 +116,7 @@ section.block{padding:72px 0}
 .foot{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center;padding:34px 0}
 .foot .copy{color:var(--muted);font-size:13.5px}
 .foot-left{display:flex;flex-direction:column;gap:6px}
-.license{color:var(--muted);font-size:13px;line-height:1.5}
+.license{color:var(--muted);font-size:15px;font-weight:600;line-height:1.5}
 .license a{margin:0;color:var(--brand);text-decoration:underline}
 .foot-links a{color:var(--muted);font-size:13.5px;margin-left:18px}
 .foot-links a:hover{color:var(--brand)}

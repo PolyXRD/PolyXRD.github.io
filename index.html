@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PolyXRD — X 射线衍射分析套件</title>
-<meta name="description" content="PolyXRD 是面向 X 射线衍射（XRD）的开源工具家族：物相检索、Rietveld 精修、结晶度、晶粒度与 CIF 处理，配套百万级物相数据库。">
+<title data-i18n="meta_title">PolyXRD — X-ray Diffraction Analysis Suite</title>
+<meta name="description" data-i18n-attr="content:meta_desc" content="PolyXRD is an open-source family of tools for X-ray diffraction (XRD): phase identification, Rietveld refinement, crystallinity, crystallite size, and CIF handling, backed by a million-scale phase database.">
 <link rel="icon" href="assets/img/logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -19,14 +19,27 @@
       <span>Poly<b>XRD</b></span>
     </a>
     <nav class="nav-links">
-      <a href="#projects">项目家族</a>
-      <a href="https://github.com/PolyXRD" target="_blank" rel="noopener">组织主页</a>
-      <a href="https://github.com/PolyXRD/PolyXRD/releases" target="_blank" rel="noopener">下载</a>
-      <a href="#contact">联系</a>
+      <a href="#projects" data-i18n="nav_projects">Projects</a>
+      <a href="https://github.com/PolyXRD" target="_blank" rel="noopener" data-i18n="nav_org">Organization</a>
+      <a href="https://github.com/PolyXRD/PolyXRD/releases" target="_blank" rel="noopener" data-i18n="nav_download">Download</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
     </nav>
-    <button class="theme-btn" id="themeToggle" aria-label="切换主题">
-      <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-    </button>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="lang-label" data-i18n="lang_label">Language</span>
+        <select id="langSelect" aria-label="Language">
+          <option value="en">English</option>
+          <option value="zh">中文</option>
+          <option value="ja">日本語</option>
+          <option value="de">Deutsch</option>
+          <option value="fr">Français</option>
+          <option value="ar">العربية</option>
+        </select>
+      </label>
+      <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">
+        <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -34,15 +47,15 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-text reveal">
-        <span class="eyebrow">X-Ray Diffraction · Open Source</span>
-        <h1>Poly<b class="accent">XRD</b><br>X 射线衍射分析套件</h1>
-        <p class="lead">一个面向 XRD 的开源工具家族——从物相检索、Rietveld 精修，到结晶度、晶粒度与 CIF 处理，并配套百万级物相数据库。为材料研究与质量检验提供清晰、可复现的工作流。</p>
+        <span class="eyebrow" data-i18n="hero_eyebrow">X-Ray Diffraction · Open Source</span>
+        <h1 data-i18n-html="hero_title">Poly<b class="accent">XRD</b><br>X-ray Diffraction Analysis Suite</h1>
+        <p class="lead" data-i18n="hero_lead">An open-source tool family for XRD — from phase identification and Rietveld refinement to crystallinity, crystallite size, and CIF handling, backed by a million-scale phase database. Clear, reproducible workflows for materials research and quality control.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="https://github.com/PolyXRD/PolyXRD" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12 11.5 11.5 0 0 0 8.4 23c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 4.9 18.3 4.9c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
-            查看主仓库
+            <span data-i18n="btn_main">View main repository</span>
           </a>
-          <a class="btn btn-ghost" href="#projects">浏览项目家族</a>
+          <a class="btn btn-ghost" href="#projects" data-i18n="btn_browse">Browse the project family</a>
         </div>
       </div>
       <div class="hero-art reveal">
@@ -83,33 +96,33 @@
     </div>
 
     <div class="wrap stats reveal">
-      <div class="stat"><div class="num">15+</div><div class="lbl">公开仓库 · XRD 工具家族</div></div>
-      <div class="stat"><div class="num">2.2M+</div><div class="lbl">物相数据库 · polyDB v4</div></div>
-      <div class="stat"><div class="num">3</div><div class="lbl">界面语言 · 中 / 英 / 日</div></div>
-      <div class="stat"><div class="num">10+</div><div class="lbl">兼容仪器数据格式</div></div>
+      <div class="stat"><div class="num">15+</div><div class="lbl" data-i18n="stat_repos_lbl">Public repositories · XRD tool family</div></div>
+      <div class="stat"><div class="num">2.2M+</div><div class="lbl" data-i18n="stat_db_lbl">Phase database · polyDB v4</div></div>
+      <div class="stat"><div class="num">6</div><div class="lbl" data-i18n="stat_langs_lbl">Interface languages</div></div>
+      <div class="stat"><div class="num">10+</div><div class="lbl" data-i18n="stat_inst_lbl">Compatible instrument formats</div></div>
     </div>
   </section>
 
   <section class="block" id="projects">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="kicker">Project Family</div>
-        <h2>PolyXRD 项目家族</h2>
-        <p>围绕 X 射线衍射分析的一套开源工具：核心套件、材料专用模块、晶体学工具与数据基础设施。下方按用途分组，点击任意卡片前往对应仓库。</p>
+        <div class="kicker" data-i18n="projects_kicker">Project Family</div>
+        <h2 data-i18n="projects_title">The PolyXRD Project Family</h2>
+        <p data-i18n="projects_desc">A set of open-source tools built around X-ray diffraction analysis: a core suite, material-specific modules, crystallographic utilities, and data infrastructure. Grouped by purpose below — click any card to visit its repository.</p>
       </div>
 
       <!-- Core -->
       <div class="group reveal">
         <div class="group-title">
           <img class="ic" src="assets/img/icon-core.svg" alt="">
-          <div><h3>核心套件</h3><div class="sub">Core Suite</div></div>
+          <div><h3 data-i18n="core_title">Core Suite</h3><div class="sub">Core Suite</div></div>
         </div>
         <div class="cards">
           <div class="card">
             <h4><span class="dot"></span>PolyXRD</h4>
-            <p>X 射线衍射图谱分析套件（主程序）：物相检索、Rietveld 精修、晶体学计算与数据库管理的一体化桌面平台。</p>
-            <div class="chips"><span class="chip">Python</span><span class="chip">PySide6</span><span class="chip">物相检索</span><span class="chip">Rietveld</span></div>
-            <div class="meta"><span>核心平台</span><a href="https://github.com/PolyXRD/PolyXRD" target="_blank" rel="noopener">仓库 ↗</a></div>
+            <p data-i18n="c_polyxrd">The flagship XRD pattern-analysis suite: an integrated desktop platform for phase identification, Rietveld refinement, crystallographic computation, and database management.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">PySide6</span><span class="chip" data-i18n="chip_phaseid">Phase ID</span><span class="chip">Rietveld</span></div>
+            <div class="meta"><span data-i18n="m_core">Core platform</span><a href="https://github.com/PolyXRD/PolyXRD" target="_blank" rel="noopener" data-i18n="repo_link">Repository ↗</a></div>
           </div>
         </div>
       </div>
@@ -118,38 +131,38 @@
       <div class="group reveal">
         <div class="group-title">
           <img class="ic" src="assets/img/icon-material.svg" alt="">
-          <div><h3>材料专用模块</h3><div class="sub">Material-specific Modules</div></div>
+          <div><h3 data-i18n="material_title">Material-specific Modules</h3><div class="sub">Material-specific Modules</div></div>
         </div>
         <div class="cards">
           <div class="card">
             <h4><span class="dot"></span>PolyXRD-NCM</h4>
-            <p>Li(NiCoMn)O₂ 正极材料的 XRD Rietveld 精修：占位、晶胞参数与应力分析。</p>
-            <div class="chips"><span class="chip">NCM</span><span class="chip">正极</span><span class="chip">Rietveld</span></div>
-            <div class="meta"><span>锂电正极</span><a href="https://github.com/PolyXRD/PolyXRD-NCM" target="_blank" rel="noopener">仓库 ↗</a></div>
+            <p data-i18n="c_ncm">XRD Rietveld refinement of Li(NiCoMn)O₂ cathode material: occupancy, lattice parameters, and strain analysis.</p>
+            <div class="chips"><span class="chip">NCM</span><span class="chip" data-i18n="chip_cathode">Cathode</span><span class="chip">Rietveld</span></div>
+            <div class="meta"><span data-i18n="m_licath">Li-ion cathode</span><a href="https://github.com/PolyXRD/PolyXRD-NCM" target="_blank" rel="noopener" data-i18n="repo_link">Repository ↗</a></div>
           </div>
           <div class="card">
             <h4><span class="dot"></span>PolyXRD-NCA</h4>
-            <p>Li(NiCoAl)O₂ 正极及前驱体的 XRD 精修与结构验证。</p>
-            <div class="chips"><span class="chip">NCA</span><span class="chip">前驱体</span><span class="chip">结构验证</span></div>
-            <div class="meta"><span>锂电正极</span><a href="https://github.com/PolyXRD/PolyXRD-NCA" target="_blank" rel="noopener">仓库 ↗</a></div>
+            <p data-i18n="c_nca">XRD refinement and structure validation for Li(NiCoAl)O₂ cathodes and their precursors.</p>
+            <div class="chips"><span class="chip">NCA</span><span class="chip" data-i18n="chip_precursor">Precursor</span><span class="chip" data-i18n="chip_structval">Structure validation</span></div>
+            <div class="meta"><span data-i18n="m_licath">Li-ion cathode</span><a href="https://github.com/PolyXRD/PolyXRD-NCA" target="_blank" rel="noopener" data-i18n="repo_link">Repository ↗</a></div>
           </div>
           <div class="card">
             <h4><span class="dot"></span>PolyXRD-LFP</h4>
-            <p>LiFePO₄ 物相核验与 Rietveld 精修；非 LFP 样本在精修前自动拒判并说明原因。</p>
-            <div class="chips"><span class="chip">LFP</span><span class="chip">物相核验</span><span class="chip">三语界面</span></div>
-            <div class="meta"><span>磷酸铁锂</span><a href="https://github.com/PolyXRD/PolyXRD-LFP" target="_blank" rel="noopener">仓库 ↗</a></div>
+            <p data-i18n="c_lfp">LiFePO₄ phase verification and Rietveld refinement; non-LFP samples are automatically rejected before refinement with an explanation.</p>
+            <div class="chips"><span class="chip">LFP</span><span class="chip" data-i18n="chip_phasecheck">Phase check</span><span class="chip" data-i18n="chip_trilang">Trilingual UI</span></div>
+            <div class="meta"><span data-i18n="m_lfp">Lithium iron phosphate (LFP)</span><a href="https://github.com/PolyXRD/PolyXRD-LFP" target="_blank" rel="noopener" data-i18n="repo_link">Repository ↗</a></div>
           </div>
           <div class="card">
             <h4><span class="dot"></span>PolyXRD-Graphite</h4>
-            <p>石墨石墨化度（d002）、Lc 堆叠厚度与 La 晶粒度；Si 内标校正 + Caglioti 仪器展宽扣除。</p>
-            <div class="chips"><span class="chip">石墨</span><span class="chip">石墨化度</span><span class="chip">Scherrer</span></div>
-            <div class="meta"><span>负极/碳材料</span><a href="https://github.com/PolyXRD/PolyXRD-Graphite" target="_blank" rel="noopener">仓库 ↗</a></div>
+            <p data-i18n="c_graphite">Graphite graphitization degree (d002), Lc stacking thickness, and La crystallite size; Si internal-standard correction with Caglioti instrument broadening removal.</p>
+            <div class="chips"><span class="chip" data-i18n="chip_graphite">Graphite</span><span class="chip" data-i18n="chip_graphitization">Graphitization</span><span class="chip">Scherrer</span></div>
+            <div class="meta"><span data-i18n="m_anode">Anode / carbon materials</span><a href="https://github.com/PolyXRD/PolyXRD-Graphite" target="_blank" rel="noopener" data-i18n="repo_link">Repository ↗</a></div>
           </div>
           <div class="card">
             <h4><span class="dot"></span>PolyXRD-RutAna</h4>
-            <p>依据 GB/T 30793-2014 测定 TiO₂ 颜料中锐钛矿 / 金红石比值。</p>
-            <div class="chips"><span class="chip">TiO₂</span><span class="chip">国标方法</span><span class="chip">物相比</span></div>
-            <div class="meta"><span>钛白粉</span><a href="https://github.com/PolyXRD/PolyXRD-RutAna" target="_blank" rel="noopener">仓库 ↗</a></div>
+            <p data-i18n="c_rutana">Determines the anatase/rutile ratio in TiO₂ pigments according to GB/T 30793-2014.</p>
+            <div class="chips"><span class="chip">TiO₂</span><span class="chip" data-i18n="chip_nationalstd">National standard</span><span class="chip" data-i18n="chip_phaseratio">Phase ratio</span></div>
+            <div class="meta"><span data-i18n="m_tio2">Titanium dioxide</span><a href="https://github.com/PolyXRD/PolyXRD-RutAna" target="_blank" rel="noopener" data-i18n="repo_link">Repository ↗</a></div>
           </div>
         </div>
       </div>
@@ -158,38 +171,38 @@
       <div class="group reveal">
         <div class="group-title">
           <img class="ic" src="assets/img/icon-crystal.svg" alt="">
-          <div><h3>晶体学工具</h3><div class="sub">Crystallographic Utilities</div></div>
+          <div><h3 data-i18n="crystal_title">Crystallographic Utilities</h3><div class="sub">Crystallographic Utilities</div></div>
         </div>
         <div class="cards">
           <div class="card">
             <h4><span class="dot"></span>PolyXRD-GetCIF</h4>
-            <p>轻量 CIF 检索与获取：COD 在线、本地库、AMCSD、Materials Project 与 Atomly；含 3D 预览与单文件 exe。</p>
-            <div class="chips"><span class="chip">CIF</span><span class="chip">COD</span><span class="chip">3D 预览</span></div>
-            <div class="meta"><span>结构获取</span><a href="https://github.com/PolyXRD/PolyXRD-GetCIF" target="_blank" rel="noopener">仓库 ↗</a></div>
+            <p data-i18n="c_getcif">Lightweight CIF retrieval and fetching: COD online, local libraries, AMCSD, Materials Project, and Atomly; includes 3D preview and a single-file executable.</p>
+            <div class="chips"><span class="chip">CIF</span><span class="chip">COD</span><span class="chip" data-i18n="chip_3dpreview">3D preview</span></div>
+            <div class="meta"><span data-i18n="m_structget">Structure retrieval</span><a href="https://github.com/PolyXRD/PolyXRD-GetCIF" target="_blank" rel="noopener" data-i18n="repo_link">Repository ↗</a></div>
           </div>
           <div class="card">
             <h4><span class="dot"></span>PolyXRD-CifCalc</h4>
-            <p>面向 XRD 的 CIF 结构检索与生成：多源 COD/AMCSD 查找、结构匹配、3D 可视化与 VESTA 联动。</p>
-            <div class="chips"><span class="chip">CIF</span><span class="chip">结构匹配</span><span class="chip">VESTA</span></div>
-            <div class="meta"><span>结构计算</span><a href="https://github.com/PolyXRD/PolyXRD-CifCalc" target="_blank" rel="noopener">仓库 ↗</a></div>
+            <p data-i18n="c_cifcalc">XRD-oriented CIF structure search and generation: multi-source COD/AMCSD lookup, structure matching, 3D visualization, and VESTA linkage.</p>
+            <div class="chips"><span class="chip">CIF</span><span class="chip" data-i18n="chip_structmatch">Structure match</span><span class="chip">VESTA</span></div>
+            <div class="meta"><span data-i18n="m_structcalc">Structure computation</span><a href="https://github.com/PolyXRD/PolyXRD-CifCalc" target="_blank" rel="noopener" data-i18n="repo_link">Repository ↗</a></div>
           </div>
           <div class="card">
             <h4><span class="dot"></span>PolyXRD-DoCryst</h4>
-            <p>全谱峰解卷积法定量结晶度（Jade 6 约定：C = Ac/(Ac+Aa)）。</p>
-            <div class="chips"><span class="chip">结晶度</span><span class="chip">全谱解卷积</span></div>
-            <div class="meta"><span>定量</span><a href="https://github.com/PolyXRD/PolyXRD-DoCryst" target="_blank" rel="noopener">仓库 ↗</a></div>
+            <p data-i18n="c_docryst">Crystallinity quantification by full-pattern peak deconvolution (Jade 6 convention: C = Ac/(Ac+Aa)).</p>
+            <div class="chips"><span class="chip" data-i18n="chip_crystallinity">Crystallinity</span><span class="chip" data-i18n="chip_fullpatt">Full-pattern deconvolution</span></div>
+            <div class="meta"><span data-i18n="m_quant">Quantification</span><a href="https://github.com/PolyXRD/PolyXRD-DoCryst" target="_blank" rel="noopener" data-i18n="repo_link">Repository ↗</a></div>
           </div>
           <div class="card">
             <h4><span class="dot"></span>PolyXRD-CrySize</h4>
-            <p>晶粒度与微应变分析：Scherrer 与 Williamson-Hall 方法，三语界面。</p>
-            <div class="chips"><span class="chip">晶粒度</span><span class="chip">Scherrer</span><span class="chip">W-H</span></div>
-            <div class="meta"><span>尺度分析</span><a href="https://github.com/PolyXRD/PolyXRD-CrySize" target="_blank" rel="noopener">仓库 ↗</a></div>
+            <p data-i18n="c_crysize">Crystallite size and microstrain analysis: Scherrer and Williamson–Hall methods, with a trilingual interface.</p>
+            <div class="chips"><span class="chip" data-i18n="chip_crystalsize">Crystallite size</span><span class="chip">Scherrer</span><span class="chip">W-H</span></div>
+            <div class="meta"><span data-i18n="m_size">Size analysis</span><a href="https://github.com/PolyXRD/PolyXRD-CrySize" target="_blank" rel="noopener" data-i18n="repo_link">Repository ↗</a></div>
           </div>
           <div class="card">
             <h4><span class="dot"></span>PolyXRD-Converter</h4>
-            <p>XRD 格式互转：xy/txt/dat/csv/mdi/raw/xrdml/json，自动识别多厂商二进制 RAW。</p>
-            <div class="chips"><span class="chip">格式转换</span><span class="chip">多厂商</span><span class="chip">i18n</span></div>
-            <div class="meta"><span>数据互通</span><a href="https://github.com/PolyXRD/PolyXRD-Converter" target="_blank" rel="noopener">仓库 ↗</a></div>
+            <p data-i18n="c_converter">XRD format interchange: xy/txt/dat/csv/mdi/raw/xrdml/json, with automatic detection of multi-vendor binary RAW files.</p>
+            <div class="chips"><span class="chip" data-i18n="chip_formatconv">Format conversion</span><span class="chip" data-i18n="chip_multivendor">Multi-vendor</span><span class="chip">i18n</span></div>
+            <div class="meta"><span data-i18n="m_interchange">Data interchange</span><a href="https://github.com/PolyXRD/PolyXRD-Converter" target="_blank" rel="noopener" data-i18n="repo_link">Repository ↗</a></div>
           </div>
         </div>
       </div>
@@ -198,32 +211,32 @@
       <div class="group reveal">
         <div class="group-title">
           <img class="ic" src="assets/img/icon-data.svg" alt="">
-          <div><h3>数据与基础设施</h3><div class="sub">Data &amp; Infrastructure</div></div>
+          <div><h3 data-i18n="data_title">Data &amp; Infrastructure</h3><div class="sub">Data &amp; Infrastructure</div></div>
         </div>
         <div class="cards">
           <div class="card">
             <h4><span class="dot"></span>PolyXRD-DataBase</h4>
-            <p>polyDB v4 外部物相数据库构建：COD/TCOD/PCOD 与 Materials Project，约 222 万相，32 项结构校验。</p>
-            <div class="chips"><span class="chip">数据库</span><span class="chip">222 万相</span><span class="chip">SQLite</span></div>
-            <div class="meta"><span>参考数据库</span><a href="https://github.com/PolyXRD/PolyXRD-DataBase" target="_blank" rel="noopener">仓库 ↗</a></div>
+            <p data-i18n="c_database">polyDB v4 external phase-database build: COD/TCOD/PCOD and Materials Project, about 2.22 million phases, with 32 structural validations.</p>
+            <div class="chips"><span class="chip" data-i18n="chip_database">Database</span><span class="chip" data-i18n="chip_2_22m">2.22M phases</span><span class="chip">SQLite</span></div>
+            <div class="meta"><span data-i18n="m_refdb">Reference database</span><a href="https://github.com/PolyXRD/PolyXRD-DataBase" target="_blank" rel="noopener" data-i18n="repo_link">Repository ↗</a></div>
           </div>
           <div class="card">
             <h4><span class="dot"></span>PolyXRD-SynthPattern</h4>
-            <p>合成 XRD 图谱生成器：为物相分析与算法验证模拟衍射谱。</p>
-            <div class="chips"><span class="chip">模拟</span><span class="chip">合成谱</span><span class="chip">验证</span></div>
-            <div class="meta"><span>数据合成</span><a href="https://github.com/PolyXRD/PolyXRD-SynthPattern" target="_blank" rel="noopener">仓库 ↗</a></div>
+            <p data-i18n="c_synthpattern">Synthetic XRD pattern generator: simulates diffraction patterns for phase analysis and algorithm validation.</p>
+            <div class="chips"><span class="chip" data-i18n="chip_simulation">Simulation</span><span class="chip" data-i18n="chip_synthetic">Synthetic</span><span class="chip" data-i18n="chip_validation">Validation</span></div>
+            <div class="meta"><span data-i18n="m_synthesis">Data synthesis</span><a href="https://github.com/PolyXRD/PolyXRD-SynthPattern" target="_blank" rel="noopener" data-i18n="repo_link">Repository ↗</a></div>
           </div>
           <div class="card">
             <h4><span class="dot"></span>PolyXRD-Manual</h4>
-            <p>PolyXRD 家族用户手册合集：五本 PDF 手册、界面截图与许可文件。</p>
-            <div class="chips"><span class="chip">手册</span><span class="chip">PDF</span><span class="chip">文档</span></div>
-            <div class="meta"><span>用户文档</span><a href="https://github.com/PolyXRD/PolyXRD-Manual" target="_blank" rel="noopener">仓库 ↗</a></div>
+            <p data-i18n="c_manual">The PolyXRD family user-manual collection: five PDF manuals, interface screenshots, and license files.</p>
+            <div class="chips"><span class="chip" data-i18n="chip_manual">Manual</span><span class="chip">PDF</span><span class="chip" data-i18n="chip_docs">Docs</span></div>
+            <div class="meta"><span data-i18n="m_userdocs">User docs</span><a href="https://github.com/PolyXRD/PolyXRD-Manual" target="_blank" rel="noopener" data-i18n="repo_link">Repository ↗</a></div>
           </div>
           <div class="card">
             <h4><span class="dot"></span>sync-COD</h4>
-            <p>COD/PCOD/TCOD 数据侧工具：验收脚本与同步脚本（共享输入）。</p>
-            <div class="chips"><span class="chip">数据同步</span><span class="chip">COD</span><span class="chip">校验</span></div>
-            <div class="meta"><span>数据管线</span><a href="https://github.com/PolyXRD/sync-COD" target="_blank" rel="noopener">仓库 ↗</a></div>
+            <p data-i18n="c_synccod">COD/PCOD/TCOD data-side tooling: acceptance and synchronization scripts (shared inputs).</p>
+            <div class="chips"><span class="chip" data-i18n="chip_datasync">Data sync</span><span class="chip">COD</span><span class="chip" data-i18n="chip_check">Validation</span></div>
+            <div class="meta"><span data-i18n="m_pipeline">Data pipeline</span><a href="https://github.com/PolyXRD/sync-COD" target="_blank" rel="noopener" data-i18n="repo_link">Repository ↗</a></div>
           </div>
         </div>
       </div>
@@ -232,24 +245,25 @@
 
   <section class="block" id="contact" style="padding-top:0">
     <div class="wrap section-head reveal">
-      <div class="kicker">Get Involved</div>
-      <h2>开源协作</h2>
-      <p>所有仓库均以开源协议发布于 GitHub。欢迎提交 Issue、Pull Request，或参考各仓库手册开始使用。最新版本与安装包见各仓库 Releases 页面。</p>
+      <div class="kicker" data-i18n="contact_kicker">Get Involved</div>
+      <h2 data-i18n="contact_title">Open Source Collaboration</h2>
+      <p data-i18n="contact_desc">All repositories are published under open-source licenses on GitHub. Issues, pull requests, and contributions are welcome — or consult each repository's manual to get started. The latest releases and installers are on each repository's Releases page.</p>
     </div>
   </section>
 </main>
 
 <footer class="site-footer">
   <div class="wrap foot">
-    <div class="copy">© <span id="year"></span> PolyXRD · X 射线衍射分析开源工具家族</div>
+    <div class="copy">© <span id="year"></span> <span data-i18n="footer_copy">PolyXRD · Open-source X-ray diffraction tool family</span></div>
     <div>
-      <a href="https://github.com/PolyXRD" target="_blank" rel="noopener">GitHub 组织</a>
-      <a href="https://github.com/PolyXRD/PolyXRD/releases" target="_blank" rel="noopener">下载</a>
-      <a href="#top">回到顶部</a>
+      <a href="https://github.com/PolyXRD" target="_blank" rel="noopener" data-i18n="footer_org">GitHub Org</a>
+      <a href="https://github.com/PolyXRD/PolyXRD/releases" target="_blank" rel="noopener" data-i18n="footer_download">Download</a>
+      <a href="#top" data-i18n="footer_top">Back to top</a>
     </div>
   </div>
 </footer>
 
+<script src="assets/js/i18n.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
